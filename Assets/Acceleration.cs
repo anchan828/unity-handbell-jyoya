@@ -14,7 +14,7 @@ public class Acceleration : MonoBehaviour
 	void Start ()
 	{
 		num = 0.7f;
-		oldAccle = 0.7f;
+		oldAccle = 1f;
 		abs = 0;
 		flag = false;
 	}
@@ -22,9 +22,7 @@ public class Acceleration : MonoBehaviour
 	{
 		accele = Input.acceleration;
 		abs = Mathf.Abs (accele.magnitude - oldAccle);
-		print ("abs : " + abs);
 		if (abs > num && !flag) {
-			print ("call");
 			audio.PlayOneShot (sound);
 			StartCoroutine (Wait ());
 		}
