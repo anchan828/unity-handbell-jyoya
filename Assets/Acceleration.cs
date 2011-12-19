@@ -13,9 +13,9 @@ public class Acceleration : MonoBehaviour
 	public Texture2D kane;
 	public Texture2D map;
 	private string status = "";
+	private bool firstcall = false;
 	public class Location
 	{
-		//32.674639,128.675308
 		public float latitude;
 		public float longitude;
 	}
@@ -23,7 +23,7 @@ public class Acceleration : MonoBehaviour
 	public Location l = new Location ();
 	IEnumerator Start ()
 	{
-		num = 0.7f;
+		num = 0.55f;
 		oldAccle = 1f;
 		abs = 0;
 		flag = false;
@@ -38,11 +38,16 @@ public class Acceleration : MonoBehaviour
 	void FixedUpdate ()
 	{
 		accele = Input.acceleration;
-		abs = Mathf.Abs (accele.magnitude - oldAccle);
-		if (abs > num && !flag) {
-			audio.PlayOneShot (sound);
-			StartCoroutine (Wait ());
-		}
+		if (firstcall) {
+			abs = Mathf.Abs (accele.magnitude - oldAccle);
+			
+			
+			if (abs > num && !flag) {
+				audio.PlayOneShot (sound);
+				StartCoroutine (Wait ());
+			}
+		} else
+			firstcall = true;
 		oldAccle = accele.magnitude;
 	}
 	IEnumerator Wait ()
@@ -58,8 +63,8 @@ public class Acceleration : MonoBehaviour
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), map);
 		GUI.DrawTexture (new Rect (0, 0, width, height), kane);
 		GUILayout.BeginArea (new Rect (0, height, width, height));
-		GUILayout.Box ("latitude" + l.latitude);
-		GUILayout.Box ("longitude" + l.longitude);
+		GUILayout.Box ("latitude : " + l.latitude);
+		GUILayout.Box ("longitude : " + l.longitude);
 		GUILayout.EndArea ();
 	}
 }
