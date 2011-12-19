@@ -11,12 +11,29 @@ public class Acceleration : MonoBehaviour
 	private bool flag = false;
 	public AudioClip sound;
 	public Texture2D kane;
-	void Start ()
+	public Texture2D map;
+	private string status = "";
+	public class Location
+	{
+		//32.674639,128.675308
+		public float latitude;
+		public float longitude;
+	}
+
+	public Location l = new Location ();
+	IEnumerator Start ()
 	{
 		num = 0.7f;
 		oldAccle = 1f;
 		abs = 0;
 		flag = false;
+		iPhoneSettings.StartLocationServiceUpdates ();
+		while (iPhoneSettings.locationServiceStatus.Equals (LocationServiceStatus.Initializing)) {
+			yield return new WaitForEndOfFrame ();
+		}
+		l.latitude = iPhoneInput.lastLocation.latitude;
+		l.longitude = iPhoneInput.lastLocation.longitude;
+		iPhoneSettings.StopLocationServiceUpdates ();
 	}
 	void FixedUpdate ()
 	{
@@ -31,11 +48,18 @@ public class Acceleration : MonoBehaviour
 	IEnumerator Wait ()
 	{
 		flag = true;
-		yield return new WaitForSeconds (7);
+		yield return new WaitForSeconds (sound.length);
 		flag = false;
 	}
 	void OnGUI ()
 	{
-		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), kane);
+		float width = Screen.width * 0.3f;
+		float height = Screen.height * 0.3f;
+		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), map);
+		GUI.DrawTexture (new Rect (0, 0, width, height), kane);
+		GUILayout.BeginArea (new Rect (0, height, width, height));
+		GUILayout.Box ("latitude" + l.latitude);
+		GUILayout.Box ("longitude" + l.longitude);
+		GUILayout.EndArea ();
 	}
 }
