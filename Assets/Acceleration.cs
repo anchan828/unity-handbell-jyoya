@@ -10,6 +10,7 @@ public class Acceleration : MonoBehaviour
 	private float abs = 0;
 	private bool flag = false;
 	public AudioClip sound;
+	public Texture2D kane;
 	void Start ()
 	{
 		num = 0.7f;
@@ -34,5 +35,9 @@ public class Acceleration : MonoBehaviour
 		flag = true;
 		yield return new WaitForSeconds (7);
 		flag = false;
+	}
+	void OnGUI ()
+	{
+		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), kane);
 	}
 }
