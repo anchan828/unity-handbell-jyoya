@@ -1,17 +1,24 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/MapView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Acceleration.cs">
     <Files>
-      <File FileName="../../UnityProjects/MakeAndroidDays/Assets/Script/Acceleration.cs" Line="187" Column="1" />
+      <File FileName="Assets/Plugins/MapView.cs" Line="39" Column="3" />
       <File FileName="Assets/Plugins/Android/AndroidManifest.xml" Line="11" Column="65" />
-      <File FileName="Assets/Plugins/MapView.cs" Line="40" Column="3" />
-      <File FileName="Assets/Acceleration.cs" Line="13" Column="24" />
+      <File FileName="Assets/Acceleration.cs" Line="46" Column="69" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True" />
-          <Node name="Assembly-CSharp-firstpass" expanded="True" />
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Acceleration.cs" selected="True" />
+            </Node>
+          </Node>
+          <Node name="Assembly-CSharp-firstpass" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Plugins" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
