@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="jp.amdbell.jyoya" android:versionCode="1" android:versionName="1.0">
-	<supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
-	<uses-sdk android:minSdkVersion="7" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:icon="@drawable/ic_launcher" android:label="@string/app_name">
-		<uses-library android:name="com.google.android.maps" />
-		<activity android:label="@string/app_name" android:name=".JyoyaActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		<activity android:name="MapViewActivity">
-		</activity>
-		<activity android:name="UnityViewActivity">
-		</activity>
-	</application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jp.amdbell.jyoya"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    
+    <uses-sdk android:minSdkVersion="7" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <uses-library android:name="com.google.android.maps" />
+        
+        <activity
+            android:label="@string/app_name"
+            android:name=".JyoyaActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="MapViewActivity" >
+        </activity>
+        <activity android:name="UnityViewActivity" >
+        </activity>
+    </application>
+    
 </manifest>
