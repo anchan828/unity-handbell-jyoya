@@ -1,0 +1,23 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/MapView.cs">
+    <Files>
+      <File FileName="../../UnityProjects/MakeAndroidDays/Assets/Script/Acceleration.cs" Line="187" Column="1" />
+      <File FileName="Assets/Plugins/Android/AndroidManifest.xml" Line="11" Column="65" />
+      <File FileName="Assets/Plugins/MapView.cs" Line="40" Column="3" />
+      <File FileName="Assets/Acceleration.cs" Line="13" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True" />
+          <Node name="Assembly-CSharp-firstpass" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
